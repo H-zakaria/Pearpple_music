@@ -3,6 +3,7 @@
   height: var(--nav-menu-height);
   position: relative;
   overflow: hidden;
+  user-select: none;
   .top {
     height: var(--nav-menu-height);
     position: fixed;
@@ -19,10 +20,7 @@
       display: flex;
       align-items: center;
       color: var(--font-primary);
-      > h1 {
-        font-size: var(--font-md);
-        font-weight: 100;
-      }
+
       > span {
         display: flex;
         justify-content: center;
@@ -38,6 +36,11 @@
       font-size: var(--font-sm);
     }
   }
+}
+.link {
+  color: var(--font-primary);
+  text-decoration: none;
+  font-size: var(--font-md);
 }
 .inner_nav {
   // background-color: lightblue;
@@ -67,6 +70,7 @@
       height: 100%;
     }
   }
+
   > ul {
     padding: 30px 0 0 0;
     list-style: none;
@@ -75,9 +79,6 @@
     > .link_wrap {
       margin: 5px 0;
       > .link {
-        color: var(--font-primary);
-        text-decoration: none;
-        font-size: var(--font-md);
         display: flex;
         align-items: center;
         padding: 0 5px;

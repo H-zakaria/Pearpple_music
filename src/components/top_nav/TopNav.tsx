@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./top_nav.scss";
 import { BiSolidPear } from "react-icons/bi";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { IoPlayCircleOutline, IoMusicalNotesSharp } from "react-icons/io5";
 import { PiSquaresFourLight } from "react-icons/pi";
 import { IoIosRadio, IoIosSearch, IoIosArrowRoundUp } from "react-icons/io";
@@ -33,7 +33,9 @@ const TopNav = () => {
             <span>
               <BiSolidPear />
             </span>
-            <h1>Music</h1>
+            <Link to={"/"} className="link">
+              Music
+            </Link>
           </button>
           <button>sign in</button>
         </div>
