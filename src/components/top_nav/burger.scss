@@ -1,0 +1,128 @@
+.burger {
+  $barWidth: 24px;
+  $burgerHeight: 35px;
+  $animationTime: 0.4s;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .lines {
+    width: $barWidth;
+    height: $barWidth;
+    position: relative;
+    > .line {
+      padding: 1px;
+      background-color: var(--font-secondary);
+      position: absolute;
+      width: $barWidth;
+      &:first-child {
+        top: 30%;
+        right: 0;
+        left: 0;
+        transform: translateY(-50%);
+      }
+      &:last-child {
+        top: 70%;
+        right: 0;
+        left: 0;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  @keyframes spin1st {
+    0% {
+      top: 30%;
+      // transform: translateY(0);
+      opacity: 1;
+    }
+    50% {
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+    }
+
+    100% {
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+      opacity: 1;
+    }
+  }
+  @keyframes spin2nd {
+    0% {
+      top: 70%;
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    100% {
+      top: 50%;
+      transform: translateY(-50%) rotate(-45deg);
+      opacity: 1;
+    }
+  }
+  @keyframes unSpin1st {
+    0% {
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+      opacity: 1;
+    }
+    50% {
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+    }
+
+    100% {
+      top: 30%;
+      // transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes unSpin2nd {
+    0% {
+      top: 50%;
+      transform: translateY(-50%) rotate(-45deg);
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    100% {
+      top: 70%;
+      opacity: 1;
+    }
+  }
+
+  &.expanded {
+    > .lines {
+      > .line {
+        &:first-child {
+          animation: spin1st 0.3s linear forwards;
+        }
+        &:last-child {
+          animation: spin2nd 0.3s linear forwards;
+        }
+      }
+    }
+  }
+  &.closed {
+    > .lines {
+      .line {
+        &:first-child {
+          animation: unSpin1st 0.3s linear forwards;
+        }
+        &:last-child {
+          animation: unSpin2nd 0.3s linear forwards;
+        }
+      }
+    }
+  }
+}
