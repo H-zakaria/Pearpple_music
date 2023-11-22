@@ -26,7 +26,7 @@ const TopNav = () => {
   ];
   return (
     <>
-      <div className={"top_nav "}>
+      <div className="top_nav">
         <div className="top">
           <Burger expanded={expanded} setExpanded={setExpanded} />
           <button className="logo">

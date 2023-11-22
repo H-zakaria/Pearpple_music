@@ -1,7 +1,7 @@
 .burger {
   $barWidth: 24px;
   $burgerHeight: 35px;
-  $animationTime: 0.4s;
+  $animationTime: 0.3s;
   width: 44px;
   height: 44px;
   display: flex;
@@ -105,10 +105,10 @@
     > .lines {
       > .line {
         &:first-child {
-          animation: spin1st 0.3s linear forwards;
+          animation: spin1st $animationTime linear forwards;
         }
         &:last-child {
-          animation: spin2nd 0.3s linear forwards;
+          animation: spin2nd $animationTime linear forwards;
         }
       }
     }
@@ -117,10 +117,10 @@
     > .lines {
       .line {
         &:first-child {
-          animation: unSpin1st 0.3s linear forwards;
+          animation: unSpin1st $animationTime linear forwards;
         }
         &:last-child {
-          animation: unSpin2nd 0.3s linear forwards;
+          animation: unSpin2nd $animationTime linear forwards;
         }
       }
     }

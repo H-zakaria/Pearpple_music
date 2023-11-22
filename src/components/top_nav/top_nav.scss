@@ -1,3 +1,4 @@
+$animationTime: 0.4s;
 .top_nav {
   background-color: var(--layer-1);
   height: var(--nav-menu-height);
@@ -37,6 +38,7 @@
     }
   }
 }
+
 .link {
   color: var(--font-primary);
   text-decoration: none;
@@ -48,7 +50,7 @@
   height: 0;
   overflow: hidden;
   overflow-y: auto;
-  transition: height 0.4s ease-in;
+  transition: height $animationTime ease-in;
   position: absolute;
   top: var(--nav-menu-height);
   left: 0;
@@ -138,4 +140,8 @@
       }
     }
   }
+}
+
+// #TODO: bigger screens
+@media only screen and (min-width: 483) {
 }
