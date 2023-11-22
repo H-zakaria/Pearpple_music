@@ -1,56 +1,10 @@
-$animationTime: 0.4s;
-.top_nav {
-  background-color: var(--layer-1);
-  height: var(--nav-menu-height);
-  position: relative;
-  overflow: hidden;
-  user-select: none;
-  .top {
-    height: var(--nav-menu-height);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: var(--layer-1);
-    color: var(--font-primary);
-    padding: 5px 20px 5px 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .logo {
-      display: flex;
-      align-items: center;
-      color: var(--font-primary);
-
-      > span {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 16px;
-        width: 16px;
-      }
-    }
-    > button {
-      color: var(--font-secondary);
-      padding: 5px;
-      text-transform: capitalize;
-      font-size: var(--font-sm);
-    }
-  }
-}
-
-.link {
-  color: var(--font-primary);
-  text-decoration: none;
-  font-size: var(--font-md);
-}
 .inner_nav {
   // background-color: lightblue;
   background-color: var(--layer-1);
   height: 0;
   overflow: hidden;
   overflow-y: auto;
-  transition: height $animationTime ease-in;
+  transition: height 0.4s ease-in;
   position: absolute;
   top: var(--nav-menu-height);
   left: 0;
@@ -58,10 +12,11 @@ $animationTime: 0.4s;
   padding: 0 30px;
 
   &.expanded {
-    display: block;
     height: 100%;
   }
-
+  &.no_expand {
+    transition: none;
+  }
   .icon_wrapper {
     display: flex;
     justify-content: center;
@@ -140,8 +95,4 @@ $animationTime: 0.4s;
       }
     }
   }
-}
-
-// #TODO: bigger screens
-@media only screen and (min-width: 483) {
 }

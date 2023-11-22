@@ -1,0 +1,125 @@
+.top_nav {
+  $animationTime: 0.4s;
+  background-color: var(--layer-1);
+  overflow: hidden;
+  user-select: none;
+  .relative_wrap {
+    position: relative;
+    height: var(--nav-menu-height);
+    .top {
+      height: var(--nav-menu-height);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: var(--layer-1);
+      color: var(--font-primary);
+      padding: 5px 20px 5px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .logo {
+        display: flex;
+        align-items: center;
+        color: var(--font-primary);
+
+        > span {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 16px;
+          width: 16px;
+        }
+      }
+      > button {
+        color: var(--font-secondary);
+        padding: 5px;
+        text-transform: capitalize;
+        font-size: var(--font-sm);
+      }
+      .searchbar {
+        display: none;
+        background-color: var(--background-color);
+        border: 1px solid var(--thin-border);
+        height: 30px;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--font-primary);
+        border-radius: 5px;
+        outline: 2px solid transparent;
+        width: 95%;
+        &.focused {
+          border-color: transparent;
+          outline-color: var(--input-focus);
+        }
+        > button {
+          color: inherit;
+          width: 30px;
+          height: 30px;
+        }
+        > input {
+          background-color: inherit;
+          color: inherit;
+          border: none;
+          outline: none;
+          height: 100%;
+          padding-left: 10px;
+          width: calc(100% - 30px);
+        }
+      }
+    }
+  }
+  .link {
+    color: var(--font-primary);
+    text-decoration: none;
+    font-size: var(--font-md);
+    white-space: nowrap;
+    word-wrap: normal;
+  }
+}
+@media screen and (min-width: 483px) {
+  .top_nav {
+    min-width: 166px;
+    max-width: 260px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--thin-border);
+    .relative_wrap {
+      height: 109px;
+      .top {
+        height: 100%;
+        position: static;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        .logo {
+          height: 55px;
+          font-size: var(--font-lg);
+          > .link {
+            font-size: inherit;
+          }
+        }
+        > .signin_btn {
+          display: none;
+        }
+
+        > .searchbar {
+          display: flex;
+        }
+      }
+    }
+
+    > .inner_nav {
+      position: static;
+      height: 90%;
+      width: 100%;
+      overflow: hidden;
+      transition: none;
+      > ul {
+        .title {
+          font-size: var(--font-sm);
+        }
+      }
+    }
+  }
+}

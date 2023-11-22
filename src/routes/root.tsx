@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
-import TopNav from "../components/top_nav/TopNav";
+import Navigation from "../components/navigation/Navigation";
 
 export default function Root() {
   return (
     <div id="app">
-      <TopNav />
+      <Navigation />
       <Outlet />
     </div>
   );
