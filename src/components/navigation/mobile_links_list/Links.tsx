@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { IconType } from "react-icons";
+import { IconContext } from "react-icons";
 import { NavLink } from "react-router-dom";
 import { IoMusicalNotesSharp } from "react-icons/io5";
 import { IoIosArrowRoundUp } from "react-icons/io";
@@ -8,18 +8,19 @@ type Route = {
   path: string;
   title: string;
   icon: JSX.Element;
-  iconSize: number;
 };
 interface Props {
   routes: Array<Route>;
   expanded: boolean;
   // setExpanded: (arg: boolean) => void;
   resetAnimationsStates: boolean;
+  iconSize: number;
 }
 const Links: React.FC<Props> = ({
   routes,
   expanded,
   resetAnimationsStates,
+  iconSize,
 }) => {
   const [canAnimate, setcanAnimate] = useState(false);
 
@@ -46,7 +47,13 @@ const Links: React.FC<Props> = ({
                 isActive ? "active link" : isPending ? "pending link" : "link"
               }
             >
-              <span className="icon_wrapper">{route.icon}</span>
+              <span className="icon_wrapper">
+                <IconContext.Provider
+                  value={{ size: iconSize.toString() + "px" }}
+                >
+                  {route.icon}
+                </IconContext.Provider>
+              </span>
               <span className="title"> {route.title}</span>
             </NavLink>
           </li>
@@ -55,7 +62,7 @@ const Links: React.FC<Props> = ({
         <div className="hr"></div>
         <button>
           <span className="icon_wrapper">
-            <IoMusicalNotesSharp size={24} />
+            <IoMusicalNotesSharp size={20} />
           </span>
           <span className="title">
             Open in music
