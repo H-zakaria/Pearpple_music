@@ -10,35 +10,34 @@ import Links from "./mobile_links_list/Links";
 import SearchInput from "./search_input/SearchInput";
 import { useMediaQuery } from "react-responsive";
 
-const iconSize = 34;
-const mobileRoutes = [
-  {
-    path: "/",
-    title: "Listen Now",
-    icon: <IoPlayCircleOutline />,
-    iconSize: iconSize,
-  },
-  {
-    path: "/browse",
-    title: "Browse",
-    icon: <PiSquaresFourLight />,
-    iconSize: iconSize,
-  },
-  {
-    path: "/radio",
-    title: "Radio",
-    icon: <IoIosRadio />,
-    iconSize: iconSize,
-  },
-  {
-    path: "/search",
-    title: "Search",
-    icon: <IoIosSearch />,
-    iconSize: iconSize,
-  },
-];
-
 const Navigation: React.FC = () => {
+  const tabletIconSize = 20;
+  const mobileIconSize = 30;
+
+  const [iconSize, setIconSize] = useState(tabletIconSize);
+  let mobileRoutes = [
+    {
+      path: "/",
+      title: "Listen Now",
+      icon: <IoPlayCircleOutline />,
+    },
+    {
+      path: "/browse",
+      title: "Browse",
+      icon: <PiSquaresFourLight />,
+    },
+    {
+      path: "/radio",
+      title: "Radio",
+      icon: <IoIosRadio />,
+    },
+    {
+      path: "/search",
+      title: "Search",
+      icon: <IoIosSearch />,
+    },
+  ];
+
   const [expanded, setExpanded] = useState(false);
   const [currentNavRoutes, setCurrentNavRoutes] = useState(mobileRoutes);
   //eviter l'animation en resize --- comme un reset
@@ -56,9 +55,11 @@ const Navigation: React.FC = () => {
         (route) => route.title !== "Search"
       );
       setCurrentNavRoutes(tabletRoutes);
+      setIconSize(tabletIconSize);
     } else {
       setResetAnimationsStates(false);
       setCurrentNavRoutes(mobileRoutes);
+      setIconSize(mobileIconSize);
     }
   }, [isTablet]);
 
@@ -87,6 +88,7 @@ const Navigation: React.FC = () => {
         routes={currentNavRoutes}
         expanded={expanded}
         resetAnimationsStates={resetAnimationsStates}
+        iconSize={iconSize}
       />
     </div>
   );
