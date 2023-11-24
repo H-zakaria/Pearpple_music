@@ -1,0 +1,108 @@
+@font-face {
+  font-family: "San_Francisco";
+  src: local("San_Francisco"),
+    url(./fonts/San_Francisco/pro/SF-Pro-Display-Regular.otf) format("opentype");
+}
+@font-face {
+  font-family: "San_Francisco_thin";
+  src: local("San_Francisco_thin"),
+    url(./fonts/San_Francisco/pro/SF-Pro-Display-Ultralight.otf)
+      format("opentype");
+}
+
+:root {
+}
+#app {
+  font-family: San_Francisco;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden !important;
+  position: relative;
+  letter-spacing: 0.5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  /* colors */
+  --background-color: #1f1f1f;
+  --layer-1: #252526;
+  --layer-2: #2c2c2c;
+  --layer-3: #4d4d4d;
+  --layer-4: #323232;
+  --dim-gray: #7d7d81;
+  --gray-gradient: linear-gradient(to top, #6c6c6e, #acacaf);
+  --light-gray: #acacaf;
+  --lighter-gray: #939398;
+  --bright-red: #d60017;
+
+  --font-primary: #eeeeee;
+  --font-secondary: #fa586a;
+  --font-tertiary: #acacaf;
+  --thin-border: rgba(255, 255, 255, 0.2);
+  --input-focus: rgba(250, 87, 106, 0.9);
+  /* typo */
+  --font-sm: 14px;
+  --font-md: 18px;
+  --font-lg: 24px;
+
+  /* layout */
+  --nav-menu-height: 45px;
+  --nav-menu-padding-y: 5px;
+
+  --sidebar-width: 35%;
+  --audio-player-height: 10%;
+  --main-content-width: 65%;
+  --main-content-height: 90%;
+
+  background-color: var(--background-color);
+
+  #main_content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    #audio_player {
+      display: none;
+    }
+    #page {
+      overflow: hidden;
+      padding: 30px 20px;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  @include tablet_breakpoint {
+    flex-direction: row;
+    > #main_content {
+      display: flex;
+      #audio_player {
+        display: block;
+      }
+    }
+  }
+}
+
+.page {
+  // background-color: var(--background-color);
+  // color: var(--font-primary);
+  // height: 100%;
+  // width: 100%;
+  // overflow: hidden;
+  // padding: 20px 30px;
+  color: var(--font-primary);
+}
+
+button {
+  background-color: transparent;
+  /* outline: none; */
+  border: none;
+  border-radius: 3px;
+  appearance: none;
+
+  transition: background-color 0.1s ease;
+
+  &:active {
+    background-color: rgba(103, 147, 214, 0.6);
+  }
+}
