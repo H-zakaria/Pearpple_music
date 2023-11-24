@@ -1,0 +1,118 @@
+#audio_player_modal {
+  color: var(--font-primary);
+  background: var(--gray-gradient);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 0;
+  transition: height 0.3s ease;
+
+  > .container {
+    padding: 10px 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @media screen and (min-height: 700px) {
+      padding-bottom: 50px;
+    }
+    &.active {
+      display: block;
+    }
+    button {
+      color: var(--light-gray);
+    }
+    .bar {
+      background-color: var(--light-gray);
+    }
+
+    > .close_modal_btn {
+      @include flexCenter;
+      width: 100%;
+      color: var(--font-primary);
+    }
+
+    > .jacket_skeleton {
+      height: 300px;
+      width: 300px;
+      background-color: var(--lighter-gray);
+      color: var(--dim-gray);
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 25px;
+
+      @media screen and (min-height: 650px) {
+        margin: 0 auto;
+        height: 400px;
+        width: 400px;
+      }
+    }
+
+    > .modal_audio_controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      height: 120px;
+      > .time_progress_bar_container {
+        width: 100%;
+        > .time_progress_bar {
+          height: 6px;
+          border-radius: 5px;
+        }
+        > .time_progress_metrics {
+          display: flex;
+          justify-content: space-between;
+          font-size: var(--font-sm);
+          padding: 5px 0;
+          color: var(--light-gray);
+          font-weight: 500;
+        }
+      }
+      > .audio_buttons_container {
+        margin: 0;
+        @include flexCenter;
+        > .audio_buttons {
+          @include flexCenter;
+          width: 200px;
+          justify-content: space-between;
+        }
+      }
+      > .sound_control_bar_container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        > .sound_control_bar {
+          height: 10px;
+          width: 100%;
+          height: 6px;
+          border-radius: 5px;
+          > .bar_fill {
+            background-color: white;
+            height: inherit;
+            border-radius: 5px;
+          }
+        }
+        > button {
+          width: 32px;
+          padding-top: 2px;
+          text-align: start;
+          &:last-child {
+            text-align: end;
+          }
+        }
+      }
+    }
+  }
+
+  @include tablet_breakpoint {
+    &.active {
+      //   display: block;
+      height: 100%;
+    }
+  }
+}
