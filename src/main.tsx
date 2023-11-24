@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./index.css";
+import "./index.scss";
 import "./styles/reset.css";
-import Root from "./routes/root";
+import Layout from "./routes/layout.tsx";
 import ErrorPage from "./routes/ErrorPage.tsx";
 import BrowsingPage from "./routes/BrowsingPage.tsx";
 import RadioPage from "./routes/RadioPage.tsx";
@@ -12,11 +12,12 @@ import SearchingPage from "./routes/SearchingPage.tsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <Layout />,
     errorElement: <ErrorPage />,
 
     children: [
       {
+        index: true,
         path: "/browse",
         element: <BrowsingPage />,
       },
