@@ -1,7 +1,7 @@
 import React from "react";
 
 const RadioPage = () => {
-  return <div>RadioPage</div>;
+  return <div className="page">RadioPage</div>;
 };
 
 export default RadioPage;
