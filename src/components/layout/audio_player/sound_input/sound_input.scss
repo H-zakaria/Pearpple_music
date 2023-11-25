@@ -1,0 +1,39 @@
+#sound_input {
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  width: 108px;
+  .mute {
+    color: var(--light-gray);
+    @include flexCenter;
+  }
+  .sound_input_bar_container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    width: 80px;
+
+    input[type="range"] {
+      appearance: none;
+      width: 90%;
+      height: 3px;
+      background-color: var(--light-gray);
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      appearance: none;
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      background-color: white;
+      cursor: pointer;
+      box-shadow: 0 0 2px 0 #555;
+      transition: background 0.3s ease-in-out;
+    }
+  }
+
+  @include desktop_breakpoint {
+    display: flex;
+  }
+}

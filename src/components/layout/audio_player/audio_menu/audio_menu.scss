@@ -1,0 +1,38 @@
+#audio_menu {
+  display: none;
+  background-color: var(--layer-2);
+  height: 40px;
+  min-width: 200px;
+  width: 35%;
+  justify-content: center;
+  align-items: center;
+
+  > .audio_buttons {
+    @include flexCenter;
+    > button {
+      @include flexCenter;
+      color: var(--dim-gray);
+      height: 100%;
+      width: 32px;
+      padding: 0;
+      //   border: 1px solid white;
+      > svg {
+        opacity: 0.8;
+        transition: opacity 0.2s ease;
+        &:hover {
+          opacity: 1;
+        }
+      }
+      &.smaller,
+      #play_btn {
+        width: 32px;
+      }
+      #play_btn {
+        padding-left: 5px;
+      }
+    }
+  }
+  @include desktop_breakpoint {
+    display: flex;
+  }
+}

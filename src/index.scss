@@ -34,11 +34,11 @@
   --light-gray: #acacaf;
   --lighter-gray: #939398;
   --bright-red: #d60017;
-
+  --translucid: rgba(31, 31, 31, 0.99);
   --font-primary: #eeeeee;
   --font-secondary: #fa586a;
   --font-tertiary: #acacaf;
-  --thin-border: rgba(255, 255, 255, 0.2);
+  --thin-border: rgba(255, 255, 255, 0.1);
   --input-focus: rgba(250, 87, 106, 0.9);
   /* typo */
   --font-sm: 14px;
@@ -62,47 +62,39 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    #audio_player {
-      display: none;
-    }
-    #page {
+    #content {
       overflow: hidden;
       padding: 30px 20px;
       height: 100%;
       width: 100%;
+      display: inline-flex;
+      .page {
+        width: 100%;
+        height: 100%;
+        background-color: blue;
+      }
     }
   }
+  button {
+    background-color: transparent;
+    border: none;
+    border-radius: 3px;
+    appearance: none;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+
+    &:active {
+      background-color: rgba(103, 147, 214, 0.6);
+    }
+  }
+
   @include tablet_breakpoint {
     flex-direction: row;
     > #main_content {
       display: flex;
       #audio_player {
-        display: block;
+        display: flex;
       }
     }
-  }
-}
-
-.page {
-  // background-color: var(--background-color);
-  // color: var(--font-primary);
-  // height: 100%;
-  // width: 100%;
-  // overflow: hidden;
-  // padding: 20px 30px;
-  color: var(--font-primary);
-}
-
-button {
-  background-color: transparent;
-  /* outline: none; */
-  border: none;
-  border-radius: 3px;
-  appearance: none;
-
-  transition: background-color 0.1s ease;
-
-  &:active {
-    background-color: rgba(103, 147, 214, 0.6);
   }
 }
