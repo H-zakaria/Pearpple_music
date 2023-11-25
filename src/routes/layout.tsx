@@ -10,7 +10,6 @@ import BottomBanner from "../components/layout/bottom_banner/BottomBanner";
 export default function Layout() {
   const [showPlayerModal, setShowPlayerModal] = useState(false);
   const [showPlaylistModal, setShowPlaylistModal] = useState(false);
-  const [noTransitions, setNoTransitions] = useState(false);
   const isTablet = useMediaQuery({
     query: "(min-width: 483px)",
   });
@@ -24,7 +23,6 @@ export default function Layout() {
       setShowPlayerModal(false);
     }
     if (!isDesktop) {
-      console.log("isnt Desktop");
       setShowPlaylistModal(false);
     }
   }, [isTablet, isDesktop]);

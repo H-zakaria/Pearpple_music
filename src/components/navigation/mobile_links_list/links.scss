@@ -10,8 +10,8 @@
   left: 0;
   right: 0;
   padding: 0 30px;
-
   &.expanded {
+    z-index: 21;
     height: 100%;
   }
   &.no_expand {

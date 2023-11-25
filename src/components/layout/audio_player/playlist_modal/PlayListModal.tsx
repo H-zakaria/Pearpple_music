@@ -11,7 +11,6 @@ const PlayListModal: React.FC<Props> = ({
   toggleModal,
   songs,
 }) => {
-  console.log(songs);
   return (
     <div id="play_lister" className={showPlaylistModal ? "active" : ""}>
       <div className="relative">
@@ -19,14 +18,15 @@ const PlayListModal: React.FC<Props> = ({
         <div className="playlist_container">
           <h1 className="title">Up Next</h1>
 
-          <div className="playlist">
-            {songs.length > 0 && songs !== undefined ? (
-              songs.map((song) => <h4 key={song}>{song}</h4>)
-            ) : (
-              <div className="no_songs">
-                <span>No upcomming songs</span>
-              </div>
-            )}
+          {songs.length > 0 && songs !== undefined && (
+            <div className="playlist">
+              {songs.map((song) => (
+                <h4 key={song}>{song}</h4>
+              ))}
+            </div>
+          )}
+          <div className="no_songs">
+            <span>No upcomming songs</span>
           </div>
         </div>
       </div>

@@ -3,7 +3,78 @@
   right: 0;
   left: 0;
   bottom: 0;
-  height: 80px;
-  background-color: red;
+  background-color: var(--bright-red);
+  color: var(--font-primary);
   z-index: 10;
+  &.top {
+    top: var(--nav-menu-height);
+    bottom: 100%;
+    height: fit-content;
+    > .relative_container {
+      height: fit-content;
+      .text {
+        height: fit-content;
+        padding: 0 30px;
+        > h1,
+        p {
+          text-align: center;
+        }
+        > h1 {
+          font-size: var(--font-sm);
+          margin-bottom: 10px;
+        }
+        > p {
+          opacity: 0.85;
+        }
+        &.no_details {
+          padding: 0;
+          width: 100%;
+          height: 30px;
+          justify-content: center;
+          > h1 {
+            width: 100%;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  > .relative_container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    .text {
+      height: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px;
+      > h1 {
+        font-size: var(--font-md);
+      }
+      > p {
+        font-size: var(--font-sm);
+      }
+    }
+
+    > button#close_details {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      padding: 0 10px;
+      color: var(--font-primary);
+    }
+    > button.try_it {
+      background-color: var(--font-primary);
+      width: 120px;
+      padding: 6px 4px;
+      font-weight: 600;
+    }
+  }
 }
