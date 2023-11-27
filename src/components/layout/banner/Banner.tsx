@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "./bottom_banner.scss";
+import "./banner.scss";
 import { useMediaQuery } from "react-responsive";
 import { IoMdClose } from "react-icons/io";
 import { TbRulerMeasure } from "react-icons/tb";
-const BottomBanner: React.FC = () => {
+const Banner: React.FC = () => {
   const [showDetails, setShowDetails] = useState(true);
   const [position, setPosition] = useState("top");
   const isTablet = useMediaQuery({
@@ -44,4 +44,4 @@ const BottomBanner: React.FC = () => {
   );
 };
 
-export default BottomBanner;
+export default Banner;

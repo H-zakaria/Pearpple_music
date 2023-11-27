@@ -1,9 +1,13 @@
 .app_page {
   height: 100%;
   width: 100%;
+  padding-top: 80px;
   background-color: var(--background-color);
   color: var(--font-primary);
   &.loading {
     @include flexCenter;
+  }
+  @include tablet_breakpoint {
+    padding: 0;
   }
 }

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./burger.scss";
+import { useLocation } from "react-router-dom";
+import { useMediaQuery } from "react-responsive";
 interface Props {
   expanded: boolean;
   setExpanded: (arg: boolean) => void;
@@ -10,27 +12,28 @@ const Burger: React.FC<Props> = ({
   setExpanded,
   resetAnimationsStates,
 }) => {
-  const [wasClosed, setWasClosed] = useState(false);
+  const [wasOpenedOnce, setWasOpenedOnce] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (resetAnimationsStates) {
+      setWasOpenedOnce(false);
+    }
+  }, [resetAnimationsStates]);
 
   function toggleBurger() {
     if (expanded) {
-      setWasClosed(true);
       setExpanded(false);
     } else {
+      setWasOpenedOnce(true);
       setExpanded(true);
     }
   }
-  useEffect(() => {
-    if (resetAnimationsStates) {
-      setWasClosed(false);
-    }
-  }, [resetAnimationsStates]);
 
   return (
     <button
       onClick={toggleBurger}
       className={
-        "burger " + (expanded ? "expanded" : wasClosed ? "closed" : "")
+        "burger " + (expanded ? "expanded" : wasOpenedOnce ? "closed" : "")
       }
     >
       <div className="lines">

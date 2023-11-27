@@ -17,7 +17,7 @@ const Navigation: React.FC = () => {
   const [iconSize, setIconSize] = useState(tabletIconSize);
   let mobileRoutes = [
     {
-      path: "/",
+      path: "/listen_now",
       title: "Listen Now",
       icon: <IoPlayCircleOutline />,
     },
@@ -42,7 +42,6 @@ const Navigation: React.FC = () => {
   const [currentNavRoutes, setCurrentNavRoutes] = useState(mobileRoutes);
   //eviter l'animation en resize --- comme un reset
   const [resetAnimationsStates, setResetAnimationsStates] = useState(false);
-
   const isTablet = useMediaQuery({
     query: "(min-width: 483px)",
   });
@@ -50,6 +49,7 @@ const Navigation: React.FC = () => {
   useEffect(() => {
     if (isTablet) {
       setResetAnimationsStates(true);
+      // setTimeout(() => setResetAnimationsStates(false), 200);
       setExpanded(false);
       const tabletRoutes = mobileRoutes.filter(
         (route) => route.title !== "Search"
@@ -63,6 +63,14 @@ const Navigation: React.FC = () => {
     }
   }, [isTablet]);
 
+  //ferme les liens lors de navigation mobile
+  function handleMobileNavigate() {
+    if (expanded) {
+      setResetAnimationsStates(false);
+      setExpanded(false);
+    }
+  }
+
   return (
     <div className="top_nav">
       <div className="relative_wrap">
@@ -72,11 +80,11 @@ const Navigation: React.FC = () => {
             setExpanded={setExpanded}
             resetAnimationsStates={resetAnimationsStates}
           />
-          <button className="logo">
+          <button className="logo" onClick={handleMobileNavigate}>
             <span>
               <BiSolidPear />
             </span>
-            <Link to={"/"} className="link">
+            <Link to={"/listen_now"} className="link">
               Music
             </Link>
           </button>
@@ -89,6 +97,7 @@ const Navigation: React.FC = () => {
         expanded={expanded}
         resetAnimationsStates={resetAnimationsStates}
         iconSize={iconSize}
+        handleMobileNavigate={handleMobileNavigate}
       />
     </div>
   );

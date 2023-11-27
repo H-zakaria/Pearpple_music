@@ -6,12 +6,14 @@
   background-color: var(--bright-red);
   color: var(--font-primary);
   z-index: 22;
+  max-height: var(--mobile-banner-max-height);
+  overflow: hidden;
   &.top {
     z-index: 20;
     top: var(--nav-menu-height);
-    bottom: 100%;
-    height: fit-content;
+    bottom: auto;
     > .relative_container {
+      max-height: var(--mobile-banner-max-height);
       height: fit-content;
       .text {
         height: fit-content;

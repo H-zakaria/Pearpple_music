@@ -8,6 +8,7 @@ import ErrorPage from "./routes/ErrorPage.tsx";
 import BrowsingPage from "./routes/BrowsingPage.tsx";
 import RadioPage from "./routes/RadioPage.tsx";
 import SearchingPage from "./routes/SearchingPage.tsx";
+import ListenNow from "./routes/ListenNow.tsx";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
+        path: "/listen_now",
+        element: <ListenNow />,
+      },
+      {
         path: "/browse",
         element: <BrowsingPage />,
       },

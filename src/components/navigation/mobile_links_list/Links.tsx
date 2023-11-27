@@ -15,12 +15,14 @@ interface Props {
   // setExpanded: (arg: boolean) => void;
   resetAnimationsStates: boolean;
   iconSize: number;
+  handleMobileNavigate: () => void;
 }
 const Links: React.FC<Props> = ({
   routes,
   expanded,
   resetAnimationsStates,
   iconSize,
+  handleMobileNavigate,
 }) => {
   const [canAnimate, setcanAnimate] = useState(false);
 
@@ -40,7 +42,11 @@ const Links: React.FC<Props> = ({
     >
       <ul>
         {routes.map((route) => (
-          <li key={route.title} className="link_wrap">
+          <li
+            key={route.title}
+            className="link_wrap"
+            onClick={handleMobileNavigate}
+          >
             <NavLink
               to={route.path}
               className={({ isActive, isPending }) =>

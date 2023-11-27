@@ -1,11 +1,11 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Navigation from "../components/navigation/Navigation";
 import AudioPlayer from "../components/layout/audio_player/AudioPlayer";
 import { useEffect, useState } from "react";
 import AudioPlayerModal from "../components/layout/audio_player/audio_modal/AudioPlayerModal";
 import { useMediaQuery } from "react-responsive";
 import PlayListModal from "../components/layout/audio_player/playlist_modal/PlayListModal";
-import BottomBanner from "../components/layout/bottom_banner/BottomBanner";
+import Banner from "../components/layout/banner/Banner";
 
 export default function Layout() {
   const [showPlayerModal, setShowPlayerModal] = useState(false);
@@ -26,6 +26,15 @@ export default function Layout() {
       setShowPlaylistModal(false);
     }
   }, [isTablet, isDesktop]);
+
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (pathname === "/") {
+      console.log("here");
+      navigate("/listen_now");
+    }
+  }, [pathname]);
 
   function toggleModal() {
     setShowPlaylistModal(!showPlaylistModal);
@@ -50,7 +59,7 @@ export default function Layout() {
         <div id="content">
           <Outlet />
         </div>
-        <BottomBanner />
+        <Banner />
       </div>
     </div>
   );
