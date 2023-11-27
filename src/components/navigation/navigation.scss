@@ -45,7 +45,7 @@
         justify-content: space-between;
         align-items: center;
         color: var(--font-primary);
-        border-radius: 5px;
+        border-radius: 4px;
         outline: 2px solid transparent;
         width: 95%;
         &.focused {
@@ -77,9 +77,9 @@
   }
 
   @include tablet_breakpoint {
-    width: 35%;
-    min-width: 170px;
-    max-width: 200px;
+    width: 40%;
+    min-width: 190px;
+    max-width: 250px;
     display: flex;
     flex-direction: column;
     border-right: 1px solid var(--thin-border);

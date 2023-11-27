@@ -5,8 +5,9 @@
   bottom: 0;
   background-color: var(--bright-red);
   color: var(--font-primary);
-  z-index: 10;
+  z-index: 22;
   &.top {
+    z-index: 20;
     top: var(--nav-menu-height);
     bottom: 100%;
     height: fit-content;
