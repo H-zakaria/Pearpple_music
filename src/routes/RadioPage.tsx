@@ -1,7 +1,12 @@
 import React from "react";
+import { AppPage } from "../components/layout/AppPage/AppPage";
 
-const RadioPage = () => {
-  return <div className="page">RadioPage</div>;
+const RadioPage: React.FC = () => {
+  return (
+    <AppPage>
+      <>radio</>
+    </AppPage>
+  );
 };
 
 export default RadioPage;

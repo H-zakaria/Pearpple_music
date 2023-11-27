@@ -1,0 +1,19 @@
+#loader {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  .petal {
+    width: 3px;
+    background-color: gray;
+    height: 10%;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: top;
+    transition: background-color 0.1s ease;
+    &.active {
+      background-color: white;
+    }
+  }
+}

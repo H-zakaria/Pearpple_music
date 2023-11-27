@@ -1,0 +1,9 @@
+.app_page {
+  height: 100%;
+  width: 100%;
+  background-color: var(--background-color);
+  color: var(--font-primary);
+  &.loading {
+    @include flexCenter;
+  }
+}

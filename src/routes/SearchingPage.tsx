@@ -1,7 +1,12 @@
 import React from "react";
+import { AppPage } from "../components/layout/AppPage/AppPage";
 
-const SearchingPage = () => {
-  return <div className="page">SearchingPage</div>;
+const SearchingPage: React.FC = () => {
+  return (
+    <AppPage>
+      <div>Searching page</div>
+    </AppPage>
+  );
 };
 
 export default SearchingPage;
