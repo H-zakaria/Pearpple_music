@@ -3,15 +3,23 @@ import "./banner.scss";
 import { useMediaQuery } from "react-responsive";
 import { IoMdClose } from "react-icons/io";
 import { TbRulerMeasure } from "react-icons/tb";
+import { useLocation } from "react-router-dom";
 const Banner: React.FC = () => {
   const [showDetails, setShowDetails] = useState(true);
+  const [displayBanner, setDisplayBanner] = useState(true);
   const [position, setPosition] = useState("top");
   const isTablet = useMediaQuery({
     query: "(min-width: 483px)",
   });
-  // const isDesktop = useMediaQuery({
-  //   query: "(min-width: 1010px)",
-  // });
+
+  //ne pas afficher banner lorsque sur "/listen_now"
+  const { pathname } = useLocation();
+  useEffect(() => {
+    pathname === "/listen_now"
+      ? setDisplayBanner(false)
+      : setDisplayBanner(true);
+  }, [pathname]);
+
   useEffect(() => {
     if (isTablet) {
       setPosition("bot");
@@ -22,7 +30,11 @@ const Banner: React.FC = () => {
   }, [isTablet]);
 
   return (
-    <div id="banner" className={position}>
+    <div
+      id="banner"
+      className={position}
+      style={{ display: displayBanner ? "block" : "none" }}
+    >
       <div className="relative_container">
         {position === "top" && showDetails && (
           <button id="close_details" onClick={() => setShowDetails(false)}>
