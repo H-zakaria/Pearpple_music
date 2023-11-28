@@ -1,5 +1,5 @@
 import React from "react";
-import { AppPage } from "../components/layout/AppPage/AppPage";
+import { AppPage } from "../components/app_page/AppPage";
 
 const BrowsingPage: React.FC = () => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import { AppPage } from "../../components/layout/AppPage/AppPage";
+import { AppPage } from "../../components/app_page/AppPage";
 import { BiSolidPear } from "react-icons/bi";
 import { IoChevronForwardSharp } from "react-icons/io5";
 import "./listen_now.scss";
