@@ -14,7 +14,7 @@
       right: 0;
       background-color: var(--layer-1);
       color: var(--font-primary);
-      padding: 5px 20px 5px 10px;
+      // padding: 5px 20px 5px 10px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -27,8 +27,8 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          height: 16px;
-          width: 16px;
+          height: 24px;
+          width: 24px;
         }
       }
       > button {
@@ -47,7 +47,7 @@
         color: var(--font-primary);
         border-radius: 4px;
         outline: 2px solid transparent;
-        width: 95%;
+        width: 100%;
         &.focused {
           border-color: transparent;
           outline-color: var(--input-focus);
@@ -82,9 +82,12 @@
     max-width: 250px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
     border-right: 1px solid var(--thin-border);
+    padding: 0 10px;
     .relative_wrap {
-      height: 109px;
+      height: 120px;
       .top {
         height: 100%;
         position: static;
@@ -104,6 +107,8 @@
 
         > .searchbar {
           display: flex;
+          width: 209px;
+          margin-bottom: 5px;
         }
       }
     }
@@ -118,7 +123,7 @@
       > ul {
         padding: 30px 0 0 0;
         > .link_wrap {
-          margin: 3px 0;
+          margin: 1px 0;
           > .link {
             display: flex;
             align-items: center;

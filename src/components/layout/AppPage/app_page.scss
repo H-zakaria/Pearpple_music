@@ -7,6 +7,9 @@
   &.loading {
     @include flexCenter;
   }
+  &.no_padding {
+    padding-top: 0;
+  }
   @include tablet_breakpoint {
     padding: 0;
   }

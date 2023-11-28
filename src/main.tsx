@@ -8,7 +8,7 @@ import ErrorPage from "./routes/ErrorPage.tsx";
 import BrowsingPage from "./routes/BrowsingPage.tsx";
 import RadioPage from "./routes/RadioPage.tsx";
 import SearchingPage from "./routes/SearchingPage.tsx";
-import ListenNow from "./routes/ListenNow.tsx";
+import ListenNow from "./routes/listen_now/ListenNow.tsx";
 
 const router = createBrowserRouter([
   {
