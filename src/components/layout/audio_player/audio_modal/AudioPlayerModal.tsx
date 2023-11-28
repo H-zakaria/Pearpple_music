@@ -19,9 +19,34 @@ const AudioPlayerModal: React.FC<Props> = ({
   showPlayerModal,
   setShowPlayerModal,
 }) => {
+  const [displayValue, setDisplayValue] = useState("none");
+  const [activeClass, setActiveClass] = useState(false);
+
+  //pour empecher d'acceder au lecteur en utilisant TAB
+  useEffect(() => {
+    let msDelayToActivate = 100;
+    //inactivate doit être > que l'animation en elle-même
+    let msDelayToInactivate = 500;
+    if (showPlayerModal) {
+      setDisplayValue("block");
+      setTimeout(() => {
+        setActiveClass(true);
+      }, msDelayToActivate);
+    } else {
+      setActiveClass(false);
+      setTimeout(() => {
+        setDisplayValue("none");
+      }, msDelayToInactivate);
+    }
+  }, [showPlayerModal]);
+
   let soundValue = 45;
   return (
-    <div id="audio_player_modal" className={showPlayerModal ? "active" : ""}>
+    <div
+      id="audio_player_modal"
+      className={activeClass ? "active" : ""}
+      style={{ display: displayValue }}
+    >
       <div className="container">
         <button
           className="close_modal_btn"
