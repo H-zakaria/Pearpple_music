@@ -1,0 +1,39 @@
+.card_overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 20;
+  opacity: 0;
+  background-color: rgba($color: #000000, $alpha: 0.3);
+  transition: 0.3s ease;
+  > .content {
+    display: flex;
+    height: 100%;
+    align-items: flex-end;
+
+    > .bottom {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      > span {
+        background-color: rgba($color: rgb(75, 71, 71), $alpha: 0.8);
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        @include flexCenter;
+        &:first-child {
+          padding-left: 2px;
+        }
+        &:hover {
+          background-color: rgb(243, 108, 130);
+        }
+      }
+    }
+  }
+}

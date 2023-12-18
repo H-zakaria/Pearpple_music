@@ -1,16 +1,23 @@
 .app_page {
   height: 100%;
   width: 100%;
-  padding-top: 80px;
   background-color: var(--background-color);
   color: var(--font-primary);
+  position: relative;
+  overflow: hidden auto;
   &.loading {
     @include flexCenter;
   }
   &.no_padding {
     padding-top: 0;
   }
-  @include tablet_breakpoint {
-    padding: 0;
+
+  .page_title {
+    border-bottom: 1px solid var(--thin-border);
+    padding: 10px;
+    margin: 60px 10px 10px 10px;
+    @include tablet_breakpoint {
+      margin-top: 10px;
+    }
   }
 }

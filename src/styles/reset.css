@@ -6,3 +6,40 @@ html,
   margin: 0;
   box-sizing: border-box;
 }
+a,
+blockquote,
+body,
+code,
+dd,
+div,
+dl,
+dt,
+embed,
+fieldset,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+html,
+img,
+legend,
+li,
+ol,
+p,
+pre,
+section,
+table,
+td,
+th,
+ul {
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

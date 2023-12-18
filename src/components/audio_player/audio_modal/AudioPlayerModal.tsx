@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./audio_player_modal.scss";
 
 import {
@@ -19,44 +19,19 @@ const AudioPlayerModal: React.FC<Props> = ({
   showPlayerModal,
   setShowPlayerModal,
 }) => {
-  const [displayValue, setDisplayValue] = useState("none");
-  const [activeClass, setActiveClass] = useState(false);
-
-  //pour empecher d'acceder au lecteur en utilisant TAB
-  useEffect(() => {
-    let msDelayToActivate = 100;
-    //inactivate doit être > que l'animation en elle-même
-    let msDelayToInactivate = 500;
-    if (showPlayerModal) {
-      setDisplayValue("block");
-      setTimeout(() => {
-        setActiveClass(true);
-      }, msDelayToActivate);
-    } else {
-      setActiveClass(false);
-      setTimeout(() => {
-        setDisplayValue("none");
-      }, msDelayToInactivate);
-    }
-  }, [showPlayerModal]);
-
   let soundValue = 45;
   return (
-    <div
-      id="audio_player_modal"
-      className={activeClass ? "active" : ""}
-      style={{ display: displayValue }}
-    >
+    <div id="audio_player_modal" className={showPlayerModal ? "active" : ""}>
       <div className="container">
         <button
           className="close_modal_btn"
-          onClick={(e) => setShowPlayerModal(false)}
+          onClick={() => setShowPlayerModal(false)}
         >
           <TbChevronCompactDown size={32} />
         </button>
 
         <div className="jacket_skeleton">
-          <IoMusicalNotes size={160} />
+          <IoMusicalNotes />
         </div>
         <div className="modal_audio_controls">
           <div className="time_progress_bar_container">

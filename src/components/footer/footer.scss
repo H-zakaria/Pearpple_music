@@ -1,0 +1,68 @@
+footer {
+  background: linear-gradient(
+    to top,
+    var(--background-color),
+    var(--layer-1),
+    var(--layer-4),
+    var(--layer-4)
+  );
+  padding: 20px 20px 95px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  max-height: 240px;
+  overflow: hidden;
+  > ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    > li {
+      padding: 0 7px;
+      font-size: var(--font-xs);
+      border-right: 1px solid rgba($color: #ffffff, $alpha: 0.3);
+      cursor: pointer;
+      word-break: keep-all;
+      list-style: none;
+      &:last-child {
+        border: none;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .languages {
+    margin-bottom: 10px;
+    > li {
+      opacity: 0.6;
+      &:first-child {
+        opacity: 1;
+      }
+    }
+  }
+
+  .copyright {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: var(--font-xs);
+
+    color: var(--lighter-gray);
+    margin: 5px 0 5px 7px;
+    > span {
+      margin: 0 5px;
+    }
+    > span.company_name {
+      color: var(--font-primary);
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .additionnal_links {
+    > li {
+      text-transform: capitalize;
+    }
+  }
+}

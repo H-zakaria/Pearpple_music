@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./burger.scss";
-import { useLocation } from "react-router-dom";
-import { useMediaQuery } from "react-responsive";
 interface Props {
   expanded: boolean;
   setExpanded: (arg: boolean) => void;

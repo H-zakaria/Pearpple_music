@@ -1,0 +1,46 @@
+.carousel {
+  position: relative;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  @include tablet_breakpoint {
+    padding: 10px 50px;
+  }
+  .items_container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    overflow-x: auto;
+    gap: 10px;
+    height: 100%;
+    &::-webkit-scrollbar {
+      visibility: hidden;
+      display: none;
+    }
+    .carousel-item {
+      min-height: max-content;
+      min-width: max-content;
+    }
+  }
+  .carousel_btn {
+    width: 30px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: absolute;
+    top: 10px;
+    bottom: 20px;
+    display: flex;
+    &:not(.isBrowser) {
+      visibility: hidden;
+      display: none;
+    }
+    @include desktop_breakpoint {
+      visibility: visible;
+    }
+    &.left {
+      left: 10px;
+    }
+    &.right {
+      right: 10px;
+    }
+  }
+}

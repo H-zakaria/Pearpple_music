@@ -1,0 +1,13 @@
+#browsing_carousels {
+  .section_title {
+    text-transform: capitalize;
+    padding-left: 20px;
+    font-size: var(--font-md);
+    @include tablet_breakpoint {
+      padding-left: 50px;
+    }
+  }
+  .section {
+    margin: 30px 0;
+  }
+}

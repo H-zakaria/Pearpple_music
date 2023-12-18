@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./sound_input.scss";
 import {
   IoIosVolumeMute,
@@ -26,19 +26,18 @@ const SoundInput: React.FC = () => {
 
   return (
     <div id="sound_input">
-      <button className="mute" onClick={(e) => setCurrentVolume(0)}>
+      <button className="mute" onClick={() => setCurrentVolume(0)}>
         {icon}
       </button>
-      <div className="sound_input_bar_container">
-        <input
-          type="range"
-          min={0}
-          max={100}
-          value={currentVolume}
-          onChange={(e) => setCurrentVolume(parseInt(e.target.value))}
-          className="sound_input_bar_cursor"
-        ></input>
-      </div>
+
+      <input
+        type="range"
+        min={0}
+        max={100}
+        value={currentVolume}
+        onChange={(e) => setCurrentVolume(parseInt(e.target.value))}
+        className="sound_input_bar_cursor"
+      ></input>
     </div>
   );
 };

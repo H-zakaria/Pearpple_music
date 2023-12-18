@@ -1,0 +1,47 @@
+#mobile_audio_player {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 10px 15px;
+  z-index: 11;
+  color: var(--font-primary);
+  background-color: transparent;
+  position: relative;
+  @include tablet_breakpoint {
+    display: none;
+  }
+
+  > div.player {
+    // position: absolute;
+    // top: 0;
+    // right: 0;
+    // bottom: 0;
+    // left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    border-radius: 15px;
+    background-color: var(--layer-2);
+    box-shadow: -3px 6px 6px -2px rgba(0, 0, 0, 0.4);
+    > button.show_player_btn {
+      padding: 8px;
+      background-color: rgba($color: #ffffff, $alpha: 0.03);
+      border: 1px solid rgba($color: #ffffff, $alpha: 0.05);
+      color: rgb(99, 97, 97);
+      border-radius: 5px;
+      @include flexCenter;
+    }
+    > div.mobile_player_controls {
+      width: 90px;
+      padding: 0 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      > button {
+        color: var(--dim-gray);
+      }
+    }
+  }
+}

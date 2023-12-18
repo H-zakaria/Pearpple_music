@@ -10,7 +10,6 @@ const Loader: React.FC = () => {
   const [isAnimating, setIsAnimating] = useState(false);
   let petalsList: Array<Petal> = [];
   let nbPetals = 11;
-  let intervalId;
   let animationTime = 0.8;
   let activeTime = animationTime / nbPetals;
 
@@ -33,7 +32,7 @@ const Loader: React.FC = () => {
 
   function startAnimation(petals: Array<Petal>) {
     setIsAnimating(true);
-    intervalId = setInterval(function () {
+    setInterval(function () {
       let currentPetals = petals.map((petal) => {
         petal.id === animationIndex
           ? (petal.active = true)
@@ -51,15 +50,19 @@ const Loader: React.FC = () => {
 
   return (
     <div id="loader">
-      {petals.length > 0
-        ? petals.map((petal) => (
-            <div
-              className={petal.active ? "petal active" : "petal"}
-              key={petal.id}
-              style={{ transform: `rotate(${petal.angle}deg) translateY(60%)` }}
-            ></div>
-          ))
-        : null}
+      <div className="relative_container">
+        {petals.length > 0
+          ? petals.map((petal) => (
+              <div
+                className={petal.active ? "petal active" : "petal"}
+                key={petal.id}
+                style={{
+                  transform: `rotate(${petal.angle}deg) translateY(60%)`,
+                }}
+              ></div>
+            ))
+          : null}
+      </div>
     </div>
   );
 };

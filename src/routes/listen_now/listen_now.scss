@@ -1,4 +1,5 @@
 #listen_now_page {
+  padding: 20px 20px 0 20px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -14,6 +15,9 @@
     flex-direction: column;
     align-items: center;
 
+    @include desktop_breakpoint {
+      min-height: 380px;
+    }
     > div.logo {
       display: none;
       justify-content: center;
@@ -37,9 +41,12 @@
       @include desktop_breakpoint {
         font-size: var(--font-xl);
         width: 700px;
+        line-height: 70px;
+        padding-bottom: 10px;
       }
     }
     p.offer {
+      min-height: 70px;
       font-size: var(--font-sm);
       width: 230px;
       @include desktop_breakpoint {
@@ -48,6 +55,7 @@
       }
     }
     > button.try_offer {
+      min-height: 30px;
       background-color: var(--bright-red);
       color: var(--font-primary);
       width: 120px;
@@ -56,6 +64,7 @@
       margin-top: 30px;
     }
     > span {
+      min-height: 30px;
       @include flexCenter;
       margin-top: 20px;
       > a {
@@ -67,6 +76,11 @@
   }
   > .img_container {
     width: 100%;
+    margin-bottom: 60px;
+
+    @include tablet_breakpoint {
+      margin-bottom: 20px;
+    }
     > img {
       width: 100%;
     }

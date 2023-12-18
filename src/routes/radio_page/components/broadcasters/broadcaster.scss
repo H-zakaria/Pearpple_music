@@ -1,0 +1,43 @@
+.broadcasters {
+  > .section {
+    margin: 20px 0;
+    > .section_title {
+      padding-left: 30px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      @include tablet_breakpoint {
+        padding-left: 60px;
+      }
+    }
+  }
+  .broadcast_item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 430px;
+    padding: 0 10px;
+    margin: 5px 0;
+    > .image_container {
+      width: 95px;
+      height: 95px;
+      border-radius: 5px;
+      > img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    > .text {
+      width: 260px;
+      text-transform: capitalize;
+      > .broadcaster_name {
+      }
+      > .description {
+        font-size: var(--font-sm);
+        color: var(--font-tertiary);
+      }
+    }
+    > span.icon {
+      color: var(--font-secondary);
+    }
+  }
+}

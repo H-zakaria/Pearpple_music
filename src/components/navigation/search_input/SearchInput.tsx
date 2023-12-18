@@ -11,8 +11,8 @@ const SearchInput: React.FC = () => {
       <input
         type="text"
         placeholder="Search"
-        onFocus={(e) => setSearchBarFocus(true)}
-        onBlur={(e) => setSearchBarFocus(false)}
+        onFocus={() => setSearchBarFocus(true)}
+        onBlur={() => setSearchBarFocus(false)}
       />
     </div>
   );

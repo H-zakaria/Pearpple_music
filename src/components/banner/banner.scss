@@ -5,12 +5,12 @@
   bottom: 0;
   background-color: var(--bright-red);
   color: var(--font-primary);
-  z-index: 22;
   max-height: var(--mobile-banner-max-height);
+  z-index: 22;
   overflow: hidden;
   &.top {
     z-index: 20;
-    top: var(--nav-menu-height);
+    top: 43px;
     bottom: auto;
     > .relative_container {
       max-height: var(--mobile-banner-max-height);
@@ -52,7 +52,7 @@
     align-items: center;
     padding: 5px 10px;
     .text {
-      height: 60px;
+      height: 70px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;

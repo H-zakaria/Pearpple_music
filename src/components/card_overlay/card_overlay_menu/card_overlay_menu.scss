@@ -1,0 +1,26 @@
+.card_overlay_menu {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  > span {
+    background-color: rgba($color: #ffffff, $alpha: 0.8);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    @include flexCenter;
+    color: rgba(42, 117, 255, 0.9);
+    margin-bottom: 5px;
+    transition: opacity 0.5s ease;
+    &.active {
+      opacity: 1;
+    }
+  }
+  > .focus {
+    opacity: 0.6;
+  }
+  > .secondary_icon {
+    opacity: 0;
+  }
+}

@@ -6,6 +6,7 @@ import AudioPlayerModal from "../components/audio_player/audio_modal/AudioPlayer
 import { useMediaQuery } from "react-responsive";
 import PlayListModal from "../components/audio_player/playlist_modal/PlayListModal";
 import Banner from "../components/banner/Banner";
+import MobileAudioPlayer from "../components/audio_player/mobile/MobileAudioPlayer";
 
 export default function Layout() {
   const [showPlayerModal, setShowPlayerModal] = useState(false);
@@ -52,13 +53,13 @@ export default function Layout() {
         />
         <PlayListModal
           showPlaylistModal={showPlaylistModal}
-          toggleModal={toggleModal}
           songs={playListSongs}
         />
         <div id="content">
           <Outlet />
         </div>
         <Banner />
+        <MobileAudioPlayer setShowPlayerModal={setShowPlayerModal} />
       </div>
     </div>
   );

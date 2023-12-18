@@ -1,5 +1,6 @@
 $tablet-min: 483px;
 $desktop-min: 1010px;
+$xl-min: 1575px;
 
 @mixin tablet_breakpoint {
   @media (min-width: #{$tablet-min}) {
@@ -9,6 +10,11 @@ $desktop-min: 1010px;
 
 @mixin desktop_breakpoint {
   @media (min-width: #{$desktop-min}) {
+    @content;
+  }
+}
+@mixin xl_breakpoint {
+  @media (min-width: #{$xl-min}) {
     @content;
   }
 }

@@ -1,16 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import "./playlist_modal.scss";
 
 interface Props {
   showPlaylistModal: boolean;
-  toggleModal: () => void;
   songs: string[];
 }
-const PlayListModal: React.FC<Props> = ({
-  showPlaylistModal,
-  toggleModal,
-  songs,
-}) => {
+const PlayListModal: React.FC<Props> = ({ showPlaylistModal, songs }) => {
   return (
     <div id="play_lister" className={showPlaylistModal ? "active" : ""}>
       <div className="relative">

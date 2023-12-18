@@ -6,25 +6,43 @@
   width: 108px;
   .mute {
     color: var(--light-gray);
+    width: 50px;
     @include flexCenter;
   }
-  .sound_input_bar_container {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    position: relative;
-    width: 80px;
 
-    input[type="range"] {
+  .sound_input_bar_cursor {
+    appearance: none;
+    height: 3px;
+    background-color: var(--light-gray);
+    width: 70px;
+
+    // -webkit-slider-thumb, -moz-range-thumb, or -ms-thumb.
+
+    &::-webkit-slider-thumb {
       appearance: none;
-      width: 90%;
-      height: 3px;
-      background-color: var(--light-gray);
+      height: 8px !important;
+      width: 8px;
+      border-radius: 50%;
+      background-color: white;
+      cursor: pointer;
+      box-shadow: 0 0 2px 0 #555;
+      transition: background 0.3s ease-in-out;
     }
-    input[type="range"]::-webkit-slider-thumb {
+
+    &::-moz-range-thumb {
       appearance: none;
-      height: 10px;
-      width: 10px;
+      height: 8px !important;
+      width: 8px;
+      border-radius: 50%;
+      background-color: white;
+      cursor: pointer;
+      box-shadow: 0 0 2px 0 #555;
+      transition: background 0.3s ease-in-out;
+    }
+    &::-ms-thumb {
+      appearance: none;
+      height: 8px !important;
+      width: 8px;
       border-radius: 50%;
       background-color: white;
       cursor: pointer;
@@ -32,7 +50,6 @@
       transition: background 0.3s ease-in-out;
     }
   }
-
   @include desktop_breakpoint {
     display: flex;
   }

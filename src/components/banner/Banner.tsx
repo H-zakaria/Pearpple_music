@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./banner.scss";
 import { useMediaQuery } from "react-responsive";
 import { IoMdClose } from "react-icons/io";
-import { TbRulerMeasure } from "react-icons/tb";
 import { useLocation } from "react-router-dom";
 const Banner: React.FC = () => {
   const [showDetails, setShowDetails] = useState(true);

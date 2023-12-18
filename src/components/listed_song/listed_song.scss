@@ -1,0 +1,69 @@
+.listed_song {
+  width: 340px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-top: 1px solid var(--thin-border);
+  padding: 5px;
+  margin: 5px 0;
+  &:hover {
+    > .image_container {
+      > .overlay {
+        opacity: 1;
+      }
+    }
+  }
+  > .image_container {
+    height: 100%;
+    aspect-ratio: 1;
+    position: relative;
+    > img {
+      width: 100%;
+      height: 100%;
+    }
+    > .overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba($color: #000000, $alpha: 0.5);
+      transition: opacity 0.3s ease;
+      padding-top: 3px;
+      padding-left: 2px;
+      > span {
+        cursor: pointer;
+      }
+    }
+  }
+  > div.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70%;
+    height: 90%;
+    text-transform: capitalize;
+    font-size: var(--font-sm);
+    > span {
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    > span.title {
+    }
+    > span.artist {
+      color: var(--font-tertiary);
+    }
+  }
+  > span.more {
+    cursor: pointer;
+    color: var(--font-secondary);
+  }
+}
