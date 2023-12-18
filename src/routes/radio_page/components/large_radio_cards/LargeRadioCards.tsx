@@ -18,7 +18,7 @@ const LargeRadioCards: React.FC = () => {
     },
     {
       name: "Binge dancing podcast",
-      theme: "dancing",
+      theme: "ballet",
       headerDescription: "Feet hurtin feels good",
       liveTime: "10PM - 4AM",
       specificTitle: "DJs furry",
