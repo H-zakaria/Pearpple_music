@@ -2,9 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import "./browsing_carousels.scss";
 
 import img_src from "../../assets/jackets/frog.jpg";
-import MyCarousel, {
-  Breakpoint,
-} from "../../components/my_carousel/MyCarousel";
+
 import Card from "../../components/card/Card";
 import LargeCard from "../../components/large_card/LargeCard";
 import ListedSong from "../../components/listed_song/ListedSong";
@@ -54,41 +52,6 @@ const sectionThemes = [
   },
 ];
 
-const breakpoints: Array<Breakpoint> = [
-  {
-    elementWidth: 170,
-    itemsToScroll: 1,
-    screenWidth: 1,
-  },
-  {
-    elementWidth: 200,
-    itemsToScroll: 6,
-    screenWidth: 1010,
-  },
-];
-const bigCardBreakpoints: Array<Breakpoint> = [
-  {
-    elementWidth: 260,
-    itemsToScroll: 1,
-    screenWidth: 1,
-  },
-  {
-    elementWidth: 300,
-    itemsToScroll: 1,
-    screenWidth: 500,
-  },
-  {
-    elementWidth: 350,
-    itemsToScroll: 2,
-    screenWidth: 1010,
-  },
-  {
-    elementWidth: 460,
-    itemsToScroll: 2,
-    screenWidth: 1410,
-  },
-];
-
 const BrowsingCarousels: React.FC = () => {
   const [songs, setSongs] = useState<Array<SongDetails>>([]);
   const [carouselSections, setCarouselSections] =
@@ -96,7 +59,6 @@ const BrowsingCarousels: React.FC = () => {
   const [carouselSections2, setCarouselSections2] =
     useState<null | Array<Section>>(null);
   const [bigCards, setBigCards] = useState<Array<JSX.Element> | null>(null);
-  const [testDivs, setTestDivs] = useState<Array<JSX.Element> | null>(null);
   function makeSongs() {
     let songList: Array<SongDetails> = [];
     for (let i = 0; i < 20; i++) {
@@ -109,17 +71,9 @@ const BrowsingCarousels: React.FC = () => {
     }
     setSongs(songList);
   }
-  function test() {
-    const c = [];
 
-    for (let i = 0; i < 10; i++) {
-      c.push(<div className="test">Test {i}</div>);
-    }
-    return c;
-  }
   useEffect(() => {
     makeSongs();
-    setTestDivs(test());
   }, []);
 
   function createSections(

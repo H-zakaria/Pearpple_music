@@ -1,5 +1,3 @@
-import * as React from "react";
-
 import { IoChevronForward, IoChevronBack } from "react-icons/io5";
 
 export const PrevButton = ({

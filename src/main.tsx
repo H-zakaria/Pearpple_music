@@ -9,7 +9,6 @@ import BrowsingPage from "./routes/browsing_page/BrowsingPage.tsx";
 import RadioPage from "./routes/radio_page/RadioPage.tsx";
 import SearchingPage from "./routes/SearchingPage.tsx";
 import ListenNow from "./routes/listen_now/ListenNow.tsx";
-import TestEmbla from "./routes/TestEmbla.tsx";
 
 const router = createBrowserRouter([
   {

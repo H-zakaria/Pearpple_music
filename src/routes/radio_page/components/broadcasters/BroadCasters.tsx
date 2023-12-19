@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import "./broadcaster.scss";
 import { RxDotsHorizontal } from "react-icons/rx";
-import MyCarousel from "../../../../components/my_carousel/MyCarousel";
 import EmblaCarousel from "../../../../components/EmblaCarousel/EmblaCarousel";
 
 const BroadCasters: React.FC = () => {
